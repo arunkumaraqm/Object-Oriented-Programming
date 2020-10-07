@@ -1,0 +1,5 @@
+*.exe*
+*.vim
+**/temp.cpp
+**/inputf.in
+**/outputf.in
