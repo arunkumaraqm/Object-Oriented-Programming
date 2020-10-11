@@ -79,8 +79,8 @@ public:
 int main(void)
 {
 	int arr[3] = {90, 80, 48};
-	LinkedList li1 = LinkedList(arr, 3, "first");
-	LinkedList li2 = LinkedList(li1, "second");
-	LinkedList li3 = LinkedList("third");
+	LinkedList li1(arr, 3, "first");
+	LinkedList li2(li1, "second");
+	LinkedList li3("third");
 	li3.insert(65); 
 }
