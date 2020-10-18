@@ -1,19 +1,38 @@
+#include <stdio.h>
+#include <dirent.h>
+#include <sys/types.h>
+#include <vector>
+#include <string>
 #include <iostream>
-#include <new>
-#include <functional>
 using namespace std;
 
-class Cl
+char* string_to_charptr(string s)
 {
-public:
-	float a;
-	Cl(int a) : a(a) {}
-};
+	return const_cast<char*>(s.c_str());
+}
 
-class De:protected Cl
-{};
+
+vector<string> list_dir(string path)
+{
+    struct dirent *entry;
+    vector<string> filenames;
+
+    DIR *dir = opendir(string_to_charptr(path));
+    if (dir == NULL) {
+        return filenames;
+    }
+
+    while ((entry = readdir(dir)) != NULL) {
+        if(entry->d_type != 0x04 )
+        	filenames.push_back(entry->d_name);
+    }
+
+    closedir(dir);
+    return filenames;
+}
 
 int main()
 {
-	De de(9);
+	for(auto a: list_dir("."))
+		cout << a << endl;
 }
