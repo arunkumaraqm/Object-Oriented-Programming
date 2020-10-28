@@ -10,7 +10,7 @@ void func4()
 	cout << "func4 begins"<<endl;
 	cout << "throwing 50"<<endl;
 	//throw 50;
-	//throw 50.0;
+	//throw 50.0; // this is a double
 	throw "50";
 	cout << "func4 ends"<<endl;
 }
@@ -29,9 +29,9 @@ void func2()
 	{
 		func3();
 	}
-	catch(float)
+	catch(double)
 	{
-		cerr << "caught float exception from func2"<<endl;
+		cerr << "caught double exception from func2"<<endl;
 	}
 	cout << "func2 ends"<<endl;
 }
@@ -47,9 +47,9 @@ void func1()
 	{
 		cerr << "caught int exception from func1" << endl;
 	}
-	catch(float)
+	catch(double)
 	{
-		cerr << "caught float exception from func1"<<endl;
+		cerr << "caught double exception from func1"<<endl;
 	}
 	cout << "func1 ends"<<endl;
 }

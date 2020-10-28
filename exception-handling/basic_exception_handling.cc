@@ -22,7 +22,8 @@ int main(int argc, char const *argv[])
 	try
 	{
 		if (number < 0)
-			throw static_cast<string>("cannot sqrt a negative no. #2");
+			//throw static_cast<string>("cannot sqrt a negative no. #2");
+			throw "cannot sqrt a negative no. #2";
 		else cout << sqrt(number)<<endl;
 		cout << "control never reaches here if exception is thrown"<<endl;
 	}
@@ -39,12 +40,13 @@ int main(int argc, char const *argv[])
 			else cout << sqrt(number)<<endl;
 			cout << "control never reaches here if exception is thrown"<<endl;
 		}
+
 		catch (int err) 
 		{cerr << err << endl;}
 	}
 	catch (string& err) 
 	{cerr << err << endl;}
-
+	
 
 	number = -1;
 	try
