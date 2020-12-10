@@ -1,5 +1,9 @@
 #include <iostream>
 #include <cassert>
+
+#ifndef ARRAY_H
+#define ARRAY_H
+
 using namespace std;
 
 template <typename T>
@@ -42,19 +46,4 @@ public:
 	int get_length();
 };
 
-template <typename T>
-Array<T>:: get_length()
-{
-	return m_size;
-}
-
-
-
-int main()
-{
-	int a(2);
-	// Array<int> arr(5, 84);
-	Array<double> arr(5, 84.9);
-	cout << arr;
-	cout << arr.get_length();
-}
+#endif
